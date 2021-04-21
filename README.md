@@ -1,12 +1,12 @@
-#  GMB Metrics (total search views , maps dirctection , etc...) with Python
+#  GMB Metrics with Python
 
 Before you use Google My Business API, you need to register your application and obtain OAuth 2.0 credentials. For details on how to get started with Google My Business API, complete the following prerequisites:
-After completing the prerequisites, you can enable the Google My Business API, request an OAuth 2.0 Client ID; then you can start using your API.
+After completing the prerequisites, you can enable the Google My Business API, request an OAuth 2.0 Client ID; (https://developers.google.com/my-business/content/basic-setup) then you can start using your API.
 # OAuth 2.0 Credentials and Discovery Document
 After the OAuth 2.0 client ID is created download the JSON and copy this file to the directory that contains your Python script and rename this file “client_secrets.json”.
 
 Next, download the “Discovery Document” (https://developers.google.com/my-business/samples/#discovery_document) and save the file as “gmb_discovery.json” in the same directory as your Python script and client credentials. You use the discovery document is conjunctions with Google API Discovery Service.
-### Client Library Installation
+## Client Library Installation
 Next, we will need to install some Google API Client libraries for Python to work with Google’s API.
 
 -Google API Python Client — “pip install google-api-python-client”
@@ -14,6 +14,10 @@ Next, we will need to install some Google API Client libraries for Python to wor
 -Google BigQuery Python Client — “pip install google-cloud-bigquery”
 
 
-# Additional Library (note i use this in my code)
+## Additional Library (note i use this in my code)
 As we will be working on large amounts of data, we need an additional library that is a fast, powerful, flexible and easy to use data analysis and manipulation tool. Yes, I am talking about “pandas”. We will install pandas and be using Dataframes for data manipulation.
 -“pip install pandas”
+
+
+Now we will use the discovery document — which we downloaded and saved earlier to build a service that we can use to authenticate the user and make Google My Business API calls by accessing their account.
+service, flags = sample_tools.init(argv, “mybusiness”, “v4”, __doc__, __file__, scope=”https://www.googleapis.com/auth/business.manage", discovery_filename=discovery_doc)
