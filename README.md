@@ -6,7 +6,7 @@ After completing the prerequisites, you can enable the Google My Business API, r
 After the OAuth 2.0 client ID is created download the JSON and copy this file to the directory that contains your Python script and rename this file “client_secrets.json”.
 
 Next, download the “Discovery Document” (https://developers.google.com/my-business/samples/#discovery_document) and save the file as “gmb_discovery.json” in the same directory as your Python script and client credentials. You use the discovery document is conjunctions with Google API Discovery Service.
-# Client Library Installation
+### Client Library Installation
 Next, we will need to install some Google API Client libraries for Python to work with Google’s API.
 
 -Google API Python Client — “pip install google-api-python-client”
